@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+    <style>
+        body{
+    font-family: sans-serif;
+    text-align: center;
+}
+main{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    height: 90vh;
+}
+.container{
+    border-radius: 20px;
+    padding: 10px;
+    background: #2b2b2b;
+    width: 40%;
+    margin: 0 auto;
+    height: auto;
+    color: white;
+    box-shadow: 20px 20px black;
+}
+.card{
+    border-radius: 20px;
+    position: relative;
+    top: 0;
+    width: 80%;
+    padding: 6px;
+    background-color: #f2f2f2;
+    margin: 0 auto;
+    height: 28vh;
+    color: #2b2b2b;
+}
+.btn-click{
+    margin-top: 12px;
+}
+button{
+    width: 100px;
+    padding: 10px;
+    border-style: none;
+    background: #f2f2f2;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #bbbbbb;
+}
+    </style>
+
+</head>
+<body>
+    <main>
+
+        <div class="container">
+            <h1>Quote</h1>
+            <div class="card">
+                <h2 id="nama">Jarjit Singh</h2>
+                <p id="quote">Hidup itu ibarat sungai mengalir,<br> ada aja tai yang lewat</p>
+            </div>
+
+            <div class="btn-click">
+                <button class="click" id="click">Click</button>
+            </div>
+            
+        </div>
+    </main>
+</body>
+<script>
+    const quote = [
+    {
+        nama: 'susilanto',
+        text: 'ITIL (im tired in love)'
+    },
+    {
+        nama: 'sumanto',
+        text: 'UDIN PETOT(udara dingin pengen ngepot)'
+    },
+    {
+        nama: 'Upin',
+        text: 'Mentada mentudu muka kau kek adudu'
+    },
+    {
+        nama: 'Jawir',
+        text: 'Lu pilih diem atau gue sayang ?'
+    },
+    {
+        nama: 'King',
+        text: 'Yahahaha JOMBlO'
+    },
+    {
+        nama: 'Atta',
+        text: 'walaupun mukaku kaya kresek tapi cinta ku rill no fek'
+    },
+    {
+        nama: 'BP Madun',
+        text: 'sudah kubilang jangan maen bola'
+    },
+    {
+        nama: 'Nadin Amizah',
+        text: 'Bun Hidup berjalan seperti Dufan'
+    },
+    {
+        nama: 'Lapuk',
+        text: 'lagi apa ?, lagi apa?, lagi stress gua'
+    },
+
+];
+
+const author = document.getElementById('nama');
+const kata = document.getElementById('quote');
+
+const clickBtn = document.getElementById('click')
+
+var count = 0;
+
+window.addEventListener('DOMContentLoaded', function(){
+    const view = quote[count];
+    author.textContent = view.nama
+    kata.textContent = view.text
+});
+
+function showPerson(person) {
+    const view = quote[person];
+    author.textContent = view.nama;
+    kata.textContent = view.text;
+}
+
+clickBtn.addEventListener('click', function(){
+    count = Math.floor(Math.random() * quote.length);
+    showPerson(count);
+})
+</script>
+</html>
